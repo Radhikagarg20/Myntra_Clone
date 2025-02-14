@@ -1,7 +1,4 @@
-# Myntra_Clone
-
-
-# Myntra Clone
+# Myntra_Clone 🛍️
 
 This project is a Myntra clone, a fashion e-commerce platform that allows users to browse and purchase products. It replicates the main functionalities of Myntra, such as viewing product details, filtering products, adding items to a cart, and checking out. The project is built using **HTML**, **CSS**, **JavaScript**, and **Swiper JS** for a smooth and interactive user experience.
 
