@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Shopping for Women, Men, Kids Fashion & Lifestyle - Myntra</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #header {
+            width: 100%;
+            height: 80px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            background-color: white;
+            top: 0px;
+            z-index: 10;
+        }
+
+        #left {
+            width: 50%;
+            height: 80px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        #leftfirst {
+            width: 65px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        #leftfirst>img {
+            width: 66px;
+            height: 63px;
+        }
+
+        #leftsecond {
+            width: 500px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-family: 'Roboto', sans-serif;
+            padding-right: 16px;
+        }
+
+        #studio::after {
+            content: "NEW";
+            color: rgb(250, 65, 65);
+            position: relative;
+            bottom: 10px;
+            font-size: 10px;
+        }
+
+        #right {
+            width: 48%;
+            height: 80px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .rightsecond {
+            width: 175px;
+            height: 40px;
+            display: flex;
+        }
+
+        #rightfirst {
+            width: 58%;
+            padding: 11px 43px;
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #f5f5f6;
+            outline: none;
+            border: none;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .sectionrightsecond {
+            width: 33%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .sectionrightsecondp {
+            margin-top: 12px;
+        }
+
+        .two {
+            display: none;
+        }
+
+        #partone {
+            display: none;
+        }
+
+        #parttwo {
+            display: none;
+        }
+
+        #notification {
+            position: fixed;
+            top: 554px;
+            right: 22px;
+            width: 44px;
+            height: 44px;
+            z-index: 10;
+        }
+
+        #notification>img {
+            width: 100%;
+        }
+
+        #profilesec {
+            width: 277px;
+            top: 60px;
+            background-color: white;
+            z-index: 10;
+            position: fixed;
+            right: 40px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 4px;
+            padding-bottom: 28px;
+        }
+
+        #profilesec>p:nth-child(1) {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-top: 25px;
+            padding-left: 18px;
+        }
+
+        #profilesec>p:nth-child(2) {
+            font-size: 14px;
+            padding-left: 18px;
+            padding-top: 5px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .button {
+            padding: 11px 26px;
+            border: 1px solid #d4d5d9;
+            color: rgb(250, 65, 65);
+            font-family: 'Roboto', sans-serif;
+            outline: none;
+            background-color: white;
+            margin-top: 15px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            border: 1px solid red;
+        }
+
+        #ruller {
+            width: 80%;
+            border: 1px solid #eeeff1;
+            margin-top: 18px;
+            margin-left: 22px;
+        }
+
+        .correctstyle {
+            font-size: 14px;
+            padding-left: 18px;
+            padding-top: 8px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .correctstyle:hover {
+            font-weight: bold;
+        }
+
+        #doublecorrect {
+            padding-top: 15px;
+        }
+
+        #extrachar::after {
+            content: "New";
+            color: rgb(250, 65, 65);
+            margin-left: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+        }
+
+        #rullertwo {
+            width: 80%;
+            border: 1px solid #eeeff1;
+            margin-top: 8px;
+            margin-left: 22px;
+        }
+
+        #doublecorrectparttwo {
+            padding-top: 15px;
+        }
+
+
+        @media all and (min-width:802px) and (max-width:1000px) {
+            #rightfirst {
+                display: none;
+            }
+
+            #right {
+                justify-content: flex-end;
+                width: 18%;
+            }
+
+            #left {
+                width: 69%;
+                justify-content: space-around;
+            }
+
+            #leftsecond {
+                padding-left: 18px;
+            }
+
+            #leftsecond>div {
+                padding-left: 7px;
+            }
+
+            .rightsecond>div {
+                padding-right: 38px;
+            }
+
+            .adjustmentone {
+                display: none;
+            }
+        }
+
+        @media all and (min-width:584px) and (max-width:801px) {
+            #rightfirst {
+                display: none;
+            }
+
+            #right {
+                justify-content: flex-end;
+                width: 25%;
+            }
+
+            #left {
+                width: 77%;
+                justify-content: space-around;
+            }
+
+            #leftsecond {
+                padding-left: 18px;
+                font-size: 10px;
+            }
+
+            #leftsecond>div {
+                padding-left: 12px;
+            }
+
+            .rightsecond>div {
+                padding-right: 10px;
+                width: 45px;
+            }
+
+            .two {
+                display: block;
+            }
+
+            .one {
+                display: none;
+            }
+
+            .sectionrightsecond {
+                font-size: 10px;
+            }
+
+            .rightsecond {
+                width: 155px;
+                justify-content: flex-end;
+            }
+
+            #profilesec {
+                width: 200px;
+                right: 30px;
+            }
+
+            .button {
+                padding: 8px 15px;
+                margin-left: 14px;
+                cursor: pointer;
+            }
+
+            #doublecorrect {
+                padding-top: 8px;
+            }
+
+            .correctstyle {
+                padding-top: 4px;
+            }
+
+            #profilesec>p:nth-child(2) {
+                font-size: 10px;
+                padding-left: 13px;
+            }
+
+            #profilesec>p:nth-child(1) {
+                padding-left: 13px;
+            }
+        }
+
+        @media all and (min-width:370px) and (max-width:583px) {
+            #left {
+                display: none;
+            }
+
+            #right {
+                display: none;
+            }
+
+            #partone {
+                display: block;
+            }
+
+            #parttwo {
+                display: block;
+            }
+
+            #partone {
+                width: 55px;
+            }
+
+            #partonefirst {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+            }
+
+            #partonefirst>img {
+                width: 100%;
+            }
+
+            #parttwoinput {
+                display: none;
+            }
+
+            .two {
+                display: block;
+            }
+
+            .one {
+                display: none;
+            }
+
+            #parttwo {
+                width: 89%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #parttwofirst {
+                display: flex;
+                font-size: 12px;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            #parttwostudio:after {
+                content: "NEW";
+                color: rgb(250, 65, 65);
+                position: relative;
+                bottom: 10px;
+                font-size: 10px;
+            }
+
+            #parttwofirst {
+                height: 35px;
+                align-items: center;
+                width: 100%;
+                justify-content: space-around;
+                font-size: 10px;
+            }
+
+            #profilesec {
+                width: 200px;
+                right: 150px;
+                top: 74px;
+            }
+
+            .button {
+                padding: 8px 15px;
+                margin-left: 14px;
+                cursor: pointer;
+            }
+
+            #doublecorrect {
+                padding-top: 8px;
+            }
+
+            .correctstyle {
+                padding-top: 4px;
+            }
+
+            #profilesec>p:nth-child(2) {
+                font-size: 10px;
+                padding-left: 13px;
+            }
+
+            #profilesec>p:nth-child(1) {
+                padding-left: 13px;
+            }
+
+            #mandatory {
+                font-size: 12px !important;
+                letter-spacing: 2px !important;
+            }
+        }
+
+        #firstbanner {
+            margin: auto;
+        }
+
+        #firstbanner>img {
+            width: 100%;
+        }
+
+        #secondbanner {
+            width: 100%;
+            margin: auto;
+            display: flex;
+        }
+
+        .secondbannerin {
+            width: 50%;
+        }
+
+        .secondbannerin>img {
+            width: 100%;
+        }
+
+        #thirdbanner {
+            width: 100%;
+        }
+
+        #thirdbanner>img {
+            width: 100%;
+        }
+
+        #fourthbanner {
+            width: 100%;
+        }
+
+        #fourthbanner>img {
+            width: 100%;
+        }
+
+        #fifthbanner {
+            width: 100%;
+            display: flex;
+        }
+
+        .fifthbannerin {
+            width: 50%;
+        }
+
+        .fifthbannerin>img {
+            width: 100%;
+        }
+
+        #sixthbanner {
+            width: 100%;
+        }
+
+        #sixthbanner>img {
+            width: 100%;
+        }
+
+        #slider {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        .swiper {
+            width: 100%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #categorylogo {
+            width: 100%;
+        }
+
+        #categorylogo>img {
+            width: 100%;
+        }
+
+        #maincategory {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+        }
+
+        .smallmaincategory>img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        #subcategory {
+            width: 100%;
+            display: flex;
+        }
+
+        .smallsubcategory {
+            width: 33.33%;
+        }
+
+        .smallsubcategory>img {
+            width: 100%;
+        }
+
+        #subbanner {
+            width: 100%;
+        }
+
+        #subbanner>img {
+            width: 100%;
+        }
+
+
+        #footer {
+            width: 100%;
+            background-color: #fafbfc;
+        }
+
+        #footermaincontent {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 45px;
+        }
+
+        .firstsec {
+            width: 15%;
+        }
+
+        #thirdsec {
+            width: 28%;
+        }
+
+        #fourhthsec {
+            width: 274px;
+        }
+
+        .footerheading {
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+        }
+
+        .gapone {
+            margin-top: 20px;
+        }
+
+        .otherlinks {
+            color: #7b7f8a;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            padding-top: 6px;
+        }
+
+        #changeone {
+            color: black;
+        }
+
+        #thirdsecimage {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .playstoreone {
+            width: 48%;
+        }
+
+        .playstoreone>img {
+            width: 100%;
+        }
+
+        #keepinntouch {
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            color: red;
+            margin-top: 20px;
+        }
+
+        #socialicons {
+            margin-top: 16px;
+            width: 46%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #socialicons>img {
+            width: 22px;
+            height: 22px;
+        }
+
+        #fourthsecmain {
+            width: 100%;
+        }
+
+        #fourthsecmain>div {
+            width: 100%;
+            display: flex;
+        }
+
+        #fourthsecmain>div>img {
+            width: 48px;
+            height: 40px;
+        }
+
+        #fourthsecmain>div>p {
+            width: 215px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            padding-left: 10px;
+        }
+
+        .gapbetween {
+            margin-top: 30px;
+        }
+
+        #endone {
+            width: 80%;
+            background-color: blue;
+            margin: auto;
+            color: #7b7f8a;
+            margin-top: 30px;
+        }
+
+        .footerlastpartis {
+            width: 80%;
+            height: 30px;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footerlastpartis>div:nth-child(1) {
+            width: 300px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #7b7f8a;
+        }
+
+        .footerlastpartis>div:nth-child(2) {
+            width: 316px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #7b7f8a;
+        }
+
+        @media all and (min-width:786px) and (max-width:1000px) {
+            #footermaincontent {
+                width: 94%;
+            }
+
+            #endone {
+                width: 94%;
+            }
+
+            .footerlastpartis {
+                width: 94%;
+            }
+
+            .otherlinks {
+                font-size: 12px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 12px;
+            }
+        }
+
+        @media all and (min-width:432px) and (max-width:785px) {
+            #footermaincontent {
+                width: 97%;
+                flex-wrap: wrap;
+            }
+
+            .otherlinks {
+                font-size: 11px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 11px;
+            }
+
+            .firstsec {
+                width: 170px;
+            }
+
+            #thirdsec {
+                margin-top: 16px;
+            }
+
+            #fourhthsec {
+                margin-top: 16px;
+            }
+
+            #endone {
+                width: 98%;
+            }
+
+            .footerlastpartis {
+                width: 99%;
+            }
+
+            .footerlastpartis>div:nth-child(1) {
+                font-size: 10px;
+            }
+
+            .footerlastpartis>div:nth-child(2) {
+                font-size: 10px;
+            }
+
+            #fourthsecmain>div {
+                justify-content: flex-end;
+            }
+
+            #socialicons {
+                width: 100%;
+            }
+        }
+
+        @media all and (min-width:406px) and (max-width:431px) {
+            #footermaincontent {
+                width: 97%;
+                flex-wrap: wrap;
+            }
+
+            .otherlinks {
+                font-size: 11px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 11px;
+            }
+
+            .firstsec {
+                width: 170px;
+            }
+
+            #thirdsec {
+                margin-top: 16px;
+            }
+
+            #fourhthsec {
+                margin-top: 16px;
+            }
+
+            #endone {
+                width: 98%;
+            }
+
+            .footerlastpartis {
+                width: 99%;
+            }
+
+            .footerlastpartis>div:nth-child(1) {
+                font-size: 10px;
+            }
+
+            .footerlastpartis>div:nth-child(2) {
+                font-size: 10px;
+            }
+
+            #fourthsecmain>div {
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #socialicons {
+                width: 100%;
+            }
+        }
+
+        @media all and (min-width:350px) and (max-width:405px) {
+            #footermaincontent {
+                width: 97%;
+                flex-wrap: wrap;
+            }
+
+            .otherlinks {
+                font-size: 11px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 11px;
+            }
+
+            .firstsec {
+                width: 170px;
+            }
+
+            #thirdsec {
+                margin-top: 16px;
+            }
+
+            #fourhthsec {
+                margin-top: 16px;
+            }
+
+            #endone {
+                width: 98%;
+            }
+
+            .footerlastpartis {
+                width: 99%;
+            }
+
+            .footerlastpartis>div:nth-child(1) {
+                font-size: 10px;
+            }
+
+            .footerlastpartis>div:nth-child(2) {
+                font-size: 10px;
+            }
+
+            #fourthsecmain>div {
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #socialicons {
+                width: 100%;
+            }
+
+            #thirdsec {
+                width: 60%;
+                margin: auto;
+                margin-top: 30px;
+            }
+
+            #fourhthsec {
+                margin: auto;
+                margin-top: 30px;
+            }
+        }
+
+
+        #notification {
+            position: fixed;
+            top: 524px;
+            right: 22px;
+            width: 44px;
+            height: 44px;
+            z-index: 10;
+        }
+
+        #notification>img {
+            width: 100%;
+        }
+
+        #profilesec {
+            width: 22%;
+            top: 60px;
+            background-color: white;
+            z-index: 10;
+            position: fixed;
+            right: 40px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 4px;
+            padding-bottom: 28px;
+        }
+
+        #profilesec>p:nth-child(1) {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-top: 25px;
+            padding-left: 18px;
+        }
+
+        #profilesec>p:nth-child(2) {
+            font-size: 14px;
+            padding-left: 18px;
+            padding-top: 5px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .button {
+            padding: 11px 26px;
+            border: 1px solid #d4d5d9;
+            color: rgb(250, 65, 65);
+            font-family: 'Roboto', sans-serif;
+            outline: none;
+            background-color: white;
+            margin-top: 15px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            border: 1px solid red;
+        }
+
+        #ruller {
+            width: 80%;
+            border: 1px solid #eeeff1;
+            margin-top: 18px;
+            margin-left: 22px;
+        }
+
+        .correctstyle {
+            font-size: 14px;
+            padding-left: 18px;
+            padding-top: 8px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .correctstyle:hover {
+            font-weight: bold;
+        }
+
+        #doublecorrect {
+            padding-top: 15px;
+        }
+
+        #extrachar::after {
+            content: "New";
+            color: rgb(250, 65, 65);
+            margin-left: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+        }
+
+        #rullertwo {
+            width: 80%;
+            border: 1px solid #eeeff1;
+            margin-top: 8px;
+            margin-left: 22px;
+        }
+
+        #doublecorrectparttwo {
+            padding-top: 15px;
+        }
+
+        .pointer:hover {
+            color: gray;
+        }
+
+        #mandatory {
+            width: 100%;
+            background-color: #e5edff;
+            margin-top: 80px;
+            text-align: center;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 18px;
+            padding: 18px 0px;
+            font-weight: bold;
+            letter-spacing: 4px;
+        }
+
+        #mandatory:hover {
+            background-color: #d1defa;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <div id="left">
+            <div id="leftfirst">
+                <img class="pointer reload" src="https://static.wixstatic.com/media/5a8799_617c7277c9d74417a778f1d49a57814d~mv2.png/v1/fill/w_200,h_200,al_c,q_85,enc_auto/Myntra.png" alt="">
+            </div>
+            <div id="leftsecond">
+                <div class="pointer men">MEN</div>
+                <div class="pointer women">WOMEN</div>
+                <div class="pointer">KIDS</div>
+                <div class="pointer">HOME & LIVING</div>
+                <div class="pointer">BEAUTY</div>
+                <div class="pointer" id="studio">STUDIO</div>
+            </div>
+        </div>
+
+        <div id="right">
+            <input type="text" id="rightfirst" placeholder="Search for products, brands and more">
+            <div class="rightsecond">
+                <div class="sectionrightsecond" id="adminpanel">
+                    <i class="fa-regular fa-user fa-xl one"></i>
+                    <i class="fa-regular fa-user fa-lg two"></i>
+                    <p class="sectionrightsecondp pointer">Profile</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-regular fa-heart fa-xl one"></i>
+                    <i class="fa-regular fa-heart fa-lg two"></i>
+                    <p class="sectionrightsecondp pointer">Wishlist</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-solid fa-bag-shopping fa-xl one"></i>
+                    <i class="fa-solid fa-bag-shopping fa-lg two"></i>
+                    <p class="sectionrightsecondp pointer">Bag</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="partone">
+            <div id="partonefirst">
+                <img class="reload" src="https://contentmediasolution.com/wp-content/uploads/2021/05/Myntra-logo-1536x1111.png" alt="">
+            </div>
+        </div>
+
+        <div id="parttwo">
+            <div id="parttwofirst">
+                <div class="men">MEN</div>
+                <div class="women">WOMEN</div>
+                <div>KIDS</div>
+                <div>HOME & LIVING</div>
+                <div>BEAUTY</div>
+                <div id="parttwostudio">STUDIO</div>
+            </div>
+
+            <input type="text" id="parttwoinput" placeholder="Search for products, brands and more">
+            <div class="rightsecond">
+                <div class="sectionrightsecond" id="pattwoadminpanel">
+                    <i class="fa-regular fa-user fa-lg two"></i>
+                    <p class="sectionrightsecondp">Profile</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-regular fa-heart fa-lg two"></i>
+                    <p class="sectionrightsecondp">Wishlist</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-solid fa-bag-shopping fa-xl one"></i>
+                    <i class="fa-solid fa-bag-shopping fa-lg two"></i>
+                    <p class="sectionrightsecondp">Bag</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mandatory">SIGN UP FIRST TO SEE ALL PRODUCTS</div>
+    <div id="firstbanner" class="pointer">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/b4109b95-e678-434d-b54b-074261528a2d1698752121691-MSB-Coupon--copy-3.jpg" alt="">
+    </div>
+    <div id="secondbanner" class="pointer">
+        <div class="secondbannerin">
+            <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/9780a1fe-4fd3-42c6-a33e-6090e3ea07691698764168633-Desktop-banner_01.jpg" alt="">
+        </div>
+        <div class="secondbannerin">
+            <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/2d6b7a55-6816-4bc1-8907-0149286141c51698764168626-Desktop-banner_02--1-.jpg" alt="">
+        </div>
+    </div>
+
+    <div id="thirdbanner" class="pointer">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/811be64c-487c-4a93-8919-7916c24ce0a61698733627488-Sponsorship-Strip--1-.jpg" alt="">
+    </div>
+    <div id="fourthbanner" class="pointer">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/5128d471-cdc7-4506-b43d-e3666fb8036c1698733226620-Coupon-Corner.jpg" alt="">
+    </div>
+    <div id="fifthbanner" class="pointer">
+        <div class="fifthbannerin">
+            <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/389c19ce-739c-4e05-bbac-ccc3d80be34d1698733536731-MYNTRA100--3-.jpg" alt="">
+        </div>
+        <div class="fifthbannerin">
+            <img src="https://assets.myntassets.com/f_webp,w_490,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/a5d37edc-de62-49b9-8a69-e470ffdb5be31698733536719-MYNTRA200--3-.jpg" alt="">
+        </div>
+    </div>
+
+    <div id="sixthbanner">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/0789c8ea-d6a2-46ba-aad0-2264ab0e3f871698733226600-OMG-Deals.jpg" alt="">
+    </div>
+
+
+    <div id="slider">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/d1ac48da-7b2f-46c1-b2e7-2334711a14b01698491508708-Min_60_Off_on_T-shirts_-_Shirts.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/0881830d-d8e0-4e92-a4c1-a6425bbe0ec21698491508887-Min_60_Off_on_T-shirts_-_Shirts_1.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/ca5ce294-5119-4660-bfde-011113ab419a1698491509190-Starting_-_459.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/30/0cceca99-c9c8-42a1-9d03-8c0c8a38407e1698683954453-image_png_812979694.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/c5509cee-0e06-4d78-9aba-703705bd7e1c1698491508837-Upto_70_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/8c170b27-7c43-4f3d-bf0d-02aa1a85c63c1698491510191-min_60_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/d1ac48da-7b2f-46c1-b2e7-2334711a14b01698491508708-Min_60_Off_on_T-shirts_-_Shirts.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/0881830d-d8e0-4e92-a4c1-a6425bbe0ec21698491508887-Min_60_Off_on_T-shirts_-_Shirts_1.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/ca5ce294-5119-4660-bfde-011113ab419a1698491509190-Starting_-_459.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/30/0cceca99-c9c8-42a1-9d03-8c0c8a38407e1698683954453-image_png_812979694.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/c5509cee-0e06-4d78-9aba-703705bd7e1c1698491508837-Upto_70_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/8c170b27-7c43-4f3d-bf0d-02aa1a85c63c1698491510191-min_60_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/d1ac48da-7b2f-46c1-b2e7-2334711a14b01698491508708-Min_60_Off_on_T-shirts_-_Shirts.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/0881830d-d8e0-4e92-a4c1-a6425bbe0ec21698491508887-Min_60_Off_on_T-shirts_-_Shirts_1.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/ca5ce294-5119-4660-bfde-011113ab419a1698491509190-Starting_-_459.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/30/0cceca99-c9c8-42a1-9d03-8c0c8a38407e1698683954453-image_png_812979694.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/c5509cee-0e06-4d78-9aba-703705bd7e1c1698491508837-Upto_70_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/8c170b27-7c43-4f3d-bf0d-02aa1a85c63c1698491510191-min_60_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/d1ac48da-7b2f-46c1-b2e7-2334711a14b01698491508708-Min_60_Off_on_T-shirts_-_Shirts.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/0881830d-d8e0-4e92-a4c1-a6425bbe0ec21698491508887-Min_60_Off_on_T-shirts_-_Shirts_1.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/ca5ce294-5119-4660-bfde-011113ab419a1698491509190-Starting_-_459.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/30/0cceca99-c9c8-42a1-9d03-8c0c8a38407e1698683954453-image_png_812979694.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/c5509cee-0e06-4d78-9aba-703705bd7e1c1698491508837-Upto_70_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/8c170b27-7c43-4f3d-bf0d-02aa1a85c63c1698491510191-min_60_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/d1ac48da-7b2f-46c1-b2e7-2334711a14b01698491508708-Min_60_Off_on_T-shirts_-_Shirts.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/0881830d-d8e0-4e92-a4c1-a6425bbe0ec21698491508887-Min_60_Off_on_T-shirts_-_Shirts_1.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/ca5ce294-5119-4660-bfde-011113ab419a1698491509190-Starting_-_459.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/30/0cceca99-c9c8-42a1-9d03-8c0c8a38407e1698683954453-image_png_812979694.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/c5509cee-0e06-4d78-9aba-703705bd7e1c1698491508837-Upto_70_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/8c170b27-7c43-4f3d-bf0d-02aa1a85c63c1698491510191-min_60_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/d1ac48da-7b2f-46c1-b2e7-2334711a14b01698491508708-Min_60_Off_on_T-shirts_-_Shirts.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/0881830d-d8e0-4e92-a4c1-a6425bbe0ec21698491508887-Min_60_Off_on_T-shirts_-_Shirts_1.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/ca5ce294-5119-4660-bfde-011113ab419a1698491509190-Starting_-_459.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/30/0cceca99-c9c8-42a1-9d03-8c0c8a38407e1698683954453-image_png_812979694.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/c5509cee-0e06-4d78-9aba-703705bd7e1c1698491508837-Upto_70_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/8c170b27-7c43-4f3d-bf0d-02aa1a85c63c1698491510191-min_60_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/d1ac48da-7b2f-46c1-b2e7-2334711a14b01698491508708-Min_60_Off_on_T-shirts_-_Shirts.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/0881830d-d8e0-4e92-a4c1-a6425bbe0ec21698491508887-Min_60_Off_on_T-shirts_-_Shirts_1.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/ca5ce294-5119-4660-bfde-011113ab419a1698491509190-Starting_-_459.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/30/0cceca99-c9c8-42a1-9d03-8c0c8a38407e1698683954453-image_png_812979694.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/c5509cee-0e06-4d78-9aba-703705bd7e1c1698491508837-Upto_70_off.png" alt=""></div>
+                <div class="swiper-slide pointer newreload"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/28/8c170b27-7c43-4f3d-bf0d-02aa1a85c63c1698491510191-min_60_off.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="categorylogo">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/fc0a261f-0a54-46ae-976a-af0fdd87fab51698733226629-Category-Specials--1-.jpg" alt="">
+    </div>
+
+    <div id="maincategory">
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/9797b925-a925-40c2-b253-b37da20bb81d1698730477309-Shop-By-Category_HP_02.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/af7936fe-7651-4aee-9c14-fa3c229941bc1698730477370-Shop-By-Category_HP_03.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/c8504032-4d95-4c38-bef9-d0f71fee5e0e1698730476998-Shop-By-Category_HP_04.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/401075b3-439e-4936-85d3-491a4394ff9d1698730477192-Shop-By-Category_HP_05.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/4e313406-820b-4725-b82f-7d873e1e60f61698730477112-Shop-By-Category_HP_06.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/7367d37b-9c8b-4e71-ac9e-16f9c356bfc81698730477154-Shop-By-Category_HP_07.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/66588baa-4d99-4892-b2d6-1e31bc0ccfbc1698730477030-Shop-By-Category_HP_08.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/e1ac3b12-c4ff-474f-8944-cf06a740c1f71698730477067-Shop-By-Category_HP_10.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/8f0f0f87-4a97-4d21-91f1-7b9eec8f92a81698730476980-Shop-By-Category_HP_11.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/2a2632cc-25ae-46b3-b883-385bff4933251698730477338-Shop-By-Category_HP_12.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/b17c8768-cd75-4a5c-a9f2-24029df0b15d1698730477281-Shop-By-Category_HP_13.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/7ae17455-db1c-4e0a-9557-8510c89c6c961698730477323-Shop-By-Category_HP_14.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/979350ec-a623-424d-8eda-c2aa6c8157f21698730477206-Shop-By-Category_HP_15.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/3fc94835-6600-4533-96e0-689cd08008681698730477467-Shop-By-Category_HP_16.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/f4348190-892c-411d-a9b5-3de3694651b31698730477220-Shop-By-Category_HP_17.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/5da5327b-7c2d-4d81-9592-5ef44cdd4e8e1698730477233-Shop-By-Category_HP_18.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/ad0fd1b0-a637-4486-ae84-019b0ba5fa8a1698730477168-Shop-By-Category_HP_19.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/4a2a51be-3238-449c-9ba8-f6f6d119dcf81698730477262-Shop-By-Category_HP_20.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/fcc80ed4-3b6b-45ed-af38-cd73b3b5c9411698730477127-Shop-By-Category_HP_21.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/87512914-d965-4e13-a1b0-9b21845a79521698730477296-Shop-By-Category_HP_22.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/b646c48f-ee6c-440c-a44a-271afcbfc9f41698730477355-Shop-By-Category_HP_23.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/03fdc2bb-b618-4af1-97b0-c0f598c756941698730477098-Shop-By-Category_HP_24.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/166026c9-6847-4d06-a8f9-854110a14d7a1698730477429-Shop-By-Category_HP_25.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/7b4e8a84-9a36-4a13-8b78-a1fcea16fb851698730477015-Shop-By-Category_HP_26.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/e87e8a34-31fa-4f73-ae3f-299a01e1554a1698730476962-Shop-By-Category_HP_27.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/cca0892a-06d7-40f2-ad22-99664d3bbaf11698730477052-Shop-By-Category_HP_28.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/0132781e-312b-47c2-b424-1c623811219b1698730477400-Shop-By-Category_HP_29.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/e092ed29-7a9f-4732-86f0-4aa09612ebfe1698730477385-Shop-By-Category_HP_30.jpg" alt=""></div>
+        <div class="smallmaincategory"><img src="https://assets.myntassets.com/f_webp,w_163,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/f8f5545b-19d1-4139-a6c6-b9b705702c971698730477444-Shop-By-Category_HP_31.jpg" alt=""></div>
+    </div>
+
+    <div id="subcategory">
+        <div class="smallsubcategory pointer"><img src="https://assets.myntassets.com/f_webp,w_326,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/4b490205-6c97-45a7-bd92-022c7ffea00c1698730477084-Shop-By-Category_HP_33.jpg" alt=""></div>
+        <div class="smallsubcategory pointer"><img src="https://assets.myntassets.com/f_webp,w_326,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/5621b767-72cb-47f9-bea0-89aa6e4dfe7f1698730477249-Shop-By-Category_HP_34.jpg" alt=""></div>
+        <div class="smallsubcategory pointer"><img src="https://assets.myntassets.com/f_webp,w_326,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/faed8b8c-5e06-449f-8259-56285582c3dd1698730477140-Shop-By-Category_HP_35.jpg" alt=""></div>
+    </div>
+
+    <div id="subbanner" class="pointer">
+        <img src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2023/10/31/35ed71ab-13ce-41e4-aef1-90b712fcdce21698733484701-App-Install-Banner--5-.jpg" alt="">
+    </div>
+
+    <div id="notification">
+        <img src="bell.png" alt="">
+    </div>
+
+    <div id="profilesec" class="none">
+        <p>Welcome</p>
+        <p>To access account and manage orders</p>
+        <button class="button" id="homeonedignup">SIGNUP</button>
+        <button class="button" id="homeonelogin">LOGIN</button>
+        <hr id="ruller">
+        <p class="correctstyle pointer" id="doublecorrect">Orders</p>
+        <p class="correctstyle pointer">Wishlist</p>
+        <p class="correctstyle pointer">Gift Cards</p>
+        <p class="correctstyle pointer">Contact Us</p>
+        <p class="correctstyle pointer" id="extrachar">Myntra Insider</p>
+        <hr id="rullertwo">
+
+        <p class="correctstyle" id="doublecorrectparttwo pointer">Myntra Credit</p>
+        <p class="correctstyle pointer">Coupons</p>
+        <p class="correctstyle pointer">Saved Cards</p>
+        <p class="correctstyle pointer">Saved VPA</p>
+        <p class="correctstyle pointer">Saved Address</p>
+    </div>
+
+    <div id="footer">
+        <div id="footermaincontent">
+            <div class="firstsec">
+                <p class="footerheading ">ONLINE SHOPPING</p>
+                <p class="otherlinks gapone pointer">Men</p>
+                <p class="otherlinks pointer">Women</p>
+                <p class="otherlinks pointer">Kids</p>
+                <p class="otherlinks pointer">Home & Living</p>
+                <p class="otherlinks pointer">Beauty</p>
+                <p class="otherlinks pointer">Gift Cards</p>
+                <p class="otherlinks pointer">Myntra Insider</p>
+            </div>
+            <div class="firstsec">
+                <p class="footerheading" id="changeone">CUSTOMER POLICIES</p>
+                <P class="otherlinks gapone pointer">Contact Us</P>
+                <p class="otherlinks pointer">FAQ</p>
+                <P class="otherlinks pointer">T&C</P>
+                <P class="otherlinks pointer">Terms Of Use</P>
+                <P class="otherlinks pointer">Track Orders</P>
+                <P class="otherlinks pointer">Shipping</P>
+                <P class="otherlinks pointer">Cancellation</P>
+                <P class="otherlinks pointer">Returns</P>
+                <P class="otherlinks pointer">Privacy Policy</P>
+                <P class="otherlinks pointer">Grievance Redressal</P>
+            </div>
+            <div id="thirdsec">
+                <p class="footerheading">EXPERIENCE MYNTRA APP ON MOBILE</p>
+                <div id="thirdsecimage" class="gapone">
+                    <div class="playstoreone pointer">
+                        <img src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="">
+                    </div>
+                    <div class="playstoreone pointer">
+                        <img src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="">
+                    </div>
+                </div>
+
+                <p id="keepinntouch" style="color: black;">KEEP IN TOUCH</p>
+
+                <div id="socialicons">
+                    <img class="pointer" src="https://constant.myntassets.com/web/assets/img/d2bec182-bef5-4fab-ade0-034d21ec82e31574604275433-fb.png" alt="">
+                    <img class="pointer" src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png" alt="">
+                    <img class="pointer" src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png" alt="">
+                    <img class="pointer" src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png" alt="">
+                </div>
+            </div>
+
+            <div id="fourhthsec">
+                <div id="fourthsecmain">
+                    <div>
+                        <img src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" alt="">
+                        <p>100% ORIGINAL guarantee for all products at myntra.com</p>
+                    </div>
+                    <div class="gapbetween">
+                        <img src="https://assets.myntassets.com/assets/images/retaillabs/2023/5/22/becb1b16-86cc-4e78-bdc7-7801c17947831684737106127-Return-Window-image.png" alt="">
+                        <p>Return within 14days of receiving your order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="endone">
+            <hr>
+        </div>
+
+        <div class="footerlastpartis">
+            <div>
+                <p>In case of any concern, <a href="#" style="color: rgb(98, 98, 223); text-decoration: none;">Contact Us</a></p>  
+            </div>
+            <div>
+                <p>© 2024 www.myntra.com. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 6,
+        autoplay: {
+            delay: 1300,
+            disableOnInteraction: false,
+        },
+    });
+
+    let adminpanel = document.getElementById("adminpanel");
+    let profilesec = document.getElementById("profilesec");
+
+    adminpanel.addEventListener("mouseover", () => {
+        profilesec.classList.remove("none");
+    })
+    adminpanel.addEventListener("mouseout", () => {
+        profilesec.classList.add("none")
+    })
+    profilesec.addEventListener("mouseover", () => {
+        profilesec.classList.remove("none");
+    })
+    profilesec.addEventListener("mouseout", () => {
+        profilesec.classList.add("none")
+    })
+
+    let homeonedignup = document.getElementById("homeonedignup");
+    let homeonelogin = document.getElementById("homeonelogin");
+
+    homeonedignup.addEventListener("click", () => {
+        window.location.href = "./firstsignup.html"
+    })
+    homeonelogin.addEventListener("click", () => {
+        window.location.href = "./login.html"
+    })
+
+    let men = document.getElementsByClassName("men");
+    let women = document.getElementsByClassName("women");
+    let reload = document.getElementsByClassName("reload");
+    let newreload = document.getElementsByClassName("newreload");
+
+    for (let i = 0; i < men.length; i++) {
+        men[i].addEventListener("click", () => {
+            window.location.href = "index.html"
+        })
+    }
+    for (let i = 0; i < women.length; i++) {
+        women[i].addEventListener("click", () => {
+            window.location.href = "index.html"
+        })
+    }
+
+    for (let i = 0; i < reload.length; i++) {
+        reload[i].addEventListener("click", () => {
+            console.log("hello");
+            window.location.href = "index.html"
+        })
+    }
+    for (let i = 0; i < newreload.length; i++) {
+        newreload[i].addEventListener("click", () => {
+            console.log("hello");
+            window.location.href = "index.html"
+        })
+    }
+</script>

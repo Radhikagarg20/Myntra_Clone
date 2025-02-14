@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tokyo Talkies</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #header {
+            width: 100%;
+            height: 80px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            background-color: white;
+            top: 0px;
+            z-index: 10;
+        }
+
+        #left {
+            width: 50%;
+            height: 80px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #leftfirst {
+            width: 65px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        #leftfirst>img {
+            width: 66px;
+            height: 63px;
+        }
+
+        #leftsecond {
+            width: 500px;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            font-family: 'Roboto', sans-serif;
+            padding-right: 16px;
+        }
+
+        #studio::after {
+            content: "NEW";
+            color: rgb(250, 65, 65);
+            position: relative;
+            bottom: 10px;
+            font-size: 10px;
+        }
+
+        #right {
+            width: 48%;
+            height: 80px;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .rightsecond {
+            width: 175px;
+            height: 40px;
+            display: flex;
+        }
+
+        #rightfirst {
+            width: 58%;
+            padding: 11px 43px;
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #f5f5f6;
+            outline: none;
+            border: none;
+            font-size: 14px;
+            border-radius: 4px;
+        }
+
+        .sectionrightsecond {
+            width: 33%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 12px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .sectionrightsecondp {
+            margin-top: 12px;
+        }
+
+        .two {
+            display: none;
+        }
+
+        #partone {
+            display: none;
+        }
+
+        #parttwo {
+            display: none;
+        }
+
+        #notification {
+            position: fixed;
+            top: 524px;
+            right: 22px;
+            width: 44px;
+            height: 44px;
+            z-index: 10;
+        }
+
+        #notification>img {
+            width: 100%;
+        }
+
+        #profilesec {
+            width: 277px;
+            top: 60px;
+            background-color: white;
+            z-index: 10;
+            position: fixed;
+            right: 40px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 4px;
+            padding-bottom: 28px;
+        }
+
+        #profilesec>p:nth-child(1) {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding-top: 25px;
+            padding-left: 18px;
+        }
+
+        #profilesec>p:nth-child(2) {
+            font-size: 14px;
+            padding-left: 18px;
+            padding-top: 5px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .button {
+            padding: 11px 26px;
+            border: 1px solid #d4d5d9;
+            color: rgb(250, 65, 65);
+            font-family: 'Roboto', sans-serif;
+            outline: none;
+            background-color: white;
+            margin-top: 15px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            border: 1px solid red;
+        }
+
+        #ruller {
+            width: 80%;
+            border: 1px solid #eeeff1;
+            margin-top: 18px;
+            margin-left: 22px;
+        }
+
+        .correctstyle {
+            font-size: 14px;
+            padding-left: 18px;
+            padding-top: 8px;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+        .correctstyle:hover {
+            font-weight: bold;
+        }
+
+        #doublecorrect {
+            padding-top: 15px;
+        }
+
+        #extrachar::after {
+            content: "New";
+            color: rgb(250, 65, 65);
+            margin-left: 10px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+        }
+
+        #rullertwo {
+            width: 80%;
+            border: 1px solid #eeeff1;
+            margin-top: 8px;
+            margin-left: 22px;
+        }
+
+        #doublecorrectparttwo {
+            padding-top: 15px;
+        }
+
+
+        @media all and (min-width:802px) and (max-width:1000px) {
+            #rightfirst {
+                display: none;
+            }
+
+            #right {
+                justify-content: flex-end;
+                width: 18%;
+            }
+
+            #left {
+                width: 69%;
+                justify-content: space-around;
+            }
+
+            #leftsecond {
+                padding-left: 18px;
+            }
+
+            #leftsecond>div {
+                padding-left: 7px;
+            }
+
+            .rightsecond>div {
+                padding-right: 38px;
+            }
+
+            .adjustmentone {
+                display: none;
+            }
+        }
+
+        @media all and (min-width:584px) and (max-width:801px) {
+            #rightfirst {
+                display: none;
+            }
+
+            #right {
+                justify-content: flex-end;
+                width: 25%;
+            }
+
+            #left {
+                width: 77%;
+                justify-content: space-around;
+            }
+
+            #leftsecond {
+                padding-left: 18px;
+                font-size: 10px;
+            }
+
+            #leftsecond>div {
+                padding-left: 12px;
+            }
+
+            .rightsecond>div {
+                padding-right: 10px;
+                width: 45px;
+            }
+
+            .two {
+                display: block;
+            }
+
+            .one {
+                display: none;
+            }
+
+            .sectionrightsecond {
+                font-size: 10px;
+            }
+
+            .rightsecond {
+                width: 155px;
+                justify-content: flex-end;
+            }
+
+            #profilesec {
+                width: 200px;
+                right: 30px;
+            }
+
+            .button {
+                padding: 8px 15px;
+                margin-left: 14px;
+                cursor: pointer;
+            }
+
+            #doublecorrect {
+                padding-top: 8px;
+            }
+
+            .correctstyle {
+                padding-top: 4px;
+            }
+
+            #profilesec>p:nth-child(2) {
+                font-size: 10px;
+                padding-left: 13px;
+            }
+
+            #profilesec>p:nth-child(1) {
+                padding-left: 13px;
+            }
+        }
+
+
+        @media all and (min-width:370px) and (max-width:583px) {
+            #left {
+                display: none;
+            }
+
+            #right {
+                display: none;
+            }
+
+            #partone {
+                display: block;
+            }
+
+            #parttwo {
+                display: block;
+            }
+
+            #partone {
+                width: 55px;
+            }
+
+            #partonefirst {
+                width: 100%;
+                height: 80px;
+                display: flex;
+                align-items: center;
+            }
+
+            #partonefirst>img {
+                width: 100%;
+            }
+
+            #parttwoinput {
+                display: none;
+            }
+
+            .two {
+                display: block;
+            }
+
+            .one {
+                display: none;
+            }
+
+            #parttwo {
+                width: 89%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            #parttwofirst {
+                display: flex;
+                font-size: 12px;
+                font-family: 'Roboto', sans-serif;
+            }
+
+            #parttwostudio:after {
+                content: "NEW";
+                color: rgb(250, 65, 65);
+                position: relative;
+                bottom: 10px;
+                font-size: 10px;
+            }
+
+            #parttwofirst {
+                height: 35px;
+                align-items: center;
+                width: 100%;
+                justify-content: space-around;
+                font-size: 10px;
+            }
+
+            #profilesec {
+                width: 200px;
+                right: 150px;
+                top: 74px;
+            }
+
+            .button {
+                padding: 8px 15px;
+                margin-left: 14px;
+                cursor: pointer;
+            }
+
+            #doublecorrect {
+                padding-top: 8px;
+            }
+
+            .correctstyle {
+                padding-top: 4px;
+            }
+
+            #profilesec>p:nth-child(2) {
+                font-size: 10px;
+                padding-left: 13px;
+            }
+
+            #profilesec>p:nth-child(1) {
+                padding-left: 13px;
+            }
+        }
+
+        #footer {
+            width: 100%;
+            background-color: #fafbfc;
+        }
+
+        #footermaincontent {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 45px;
+        }
+
+        .firstsec {
+            width: 15%;
+        }
+
+        #thirdsec {
+            width: 28%;
+        }
+
+        #fourhthsec {
+            width: 274px;
+        }
+
+        .footerheading {
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+        }
+
+        .gapone {
+            margin-top: 20px;
+        }
+
+        .otherlinks {
+            color: #7b7f8a;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            padding-top: 6px;
+        }
+
+        #changeone {
+            color: black;
+        }
+
+        #thirdsecimage {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .playstoreone {
+            width: 48%;
+        }
+
+        .playstoreone>img {
+            width: 100%;
+        }
+
+        #keepinntouch {
+            font-family: 'Roboto', sans-serif;
+            font-size: 11px;
+            color: red;
+            margin-top: 20px;
+        }
+
+        #socialicons {
+            margin-top: 16px;
+            width: 46%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #socialicons>img {
+            width: 22px;
+            height: 22px;
+        }
+
+        #fourthsecmain {
+            width: 100%;
+        }
+
+        #fourthsecmain>div {
+            width: 100%;
+            display: flex;
+        }
+
+        #fourthsecmain>div>img {
+            width: 48px;
+            height: 40px;
+        }
+
+        #fourthsecmain>div>p {
+            width: 215px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            padding-left: 10px;
+        }
+
+        .gapbetween {
+            margin-top: 30px;
+        }
+
+        #endone {
+            width: 80%;
+            background-color: blue;
+            margin: auto;
+            color: #7b7f8a;
+            margin-top: 30px;
+        }
+
+        .footerlastpartis {
+            width: 80%;
+            height: 30px;
+            margin: auto;
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footerlastpartis>div:nth-child(1) {
+            width: 300px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #7b7f8a;
+        }
+
+        .footerlastpartis>div:nth-child(2) {
+            width: 316px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            color: #7b7f8a;
+        }
+
+        @media all and (min-width:786px) and (max-width:1000px) {
+            #footermaincontent {
+                width: 94%;
+            }
+
+            #endone {
+                width: 94%;
+            }
+
+            .footerlastpartis {
+                width: 94%;
+            }
+
+            .otherlinks {
+                font-size: 12px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 12px;
+            }
+        }
+
+        @media all and (min-width:432px) and (max-width:785px) {
+            #footermaincontent {
+                width: 97%;
+                flex-wrap: wrap;
+            }
+
+            .otherlinks {
+                font-size: 11px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 11px;
+            }
+
+            .firstsec {
+                width: 170px;
+            }
+
+            #thirdsec {
+                margin-top: 16px;
+            }
+
+            #fourhthsec {
+                margin-top: 16px;
+            }
+
+            #endone {
+                width: 98%;
+            }
+
+            .footerlastpartis {
+                width: 99%;
+            }
+
+            .footerlastpartis>div:nth-child(1) {
+                font-size: 10px;
+            }
+
+            .footerlastpartis>div:nth-child(2) {
+                font-size: 10px;
+            }
+
+            #fourthsecmain>div {
+                justify-content: flex-end;
+            }
+
+            #socialicons {
+                width: 100%;
+            }
+        }
+
+        @media all and (min-width:406px) and (max-width:431px) {
+            #footermaincontent {
+                width: 97%;
+                flex-wrap: wrap;
+            }
+
+            .otherlinks {
+                font-size: 11px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 11px;
+            }
+
+            .firstsec {
+                width: 170px;
+            }
+
+            #thirdsec {
+                margin-top: 16px;
+            }
+
+            #fourhthsec {
+                margin-top: 16px;
+            }
+
+            #endone {
+                width: 98%;
+            }
+
+            .footerlastpartis {
+                width: 99%;
+            }
+
+            .footerlastpartis>div:nth-child(1) {
+                font-size: 10px;
+            }
+
+            .footerlastpartis>div:nth-child(2) {
+                font-size: 10px;
+            }
+
+            #fourthsecmain>div {
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #socialicons {
+                width: 100%;
+            }
+        }
+
+        @media all and (min-width:350px) and (max-width:405px) {
+            #footermaincontent {
+                width: 97%;
+                flex-wrap: wrap;
+            }
+
+            .otherlinks {
+                font-size: 11px;
+            }
+
+            #fourthsecmain>div>p {
+                font-size: 11px;
+            }
+
+            .firstsec {
+                width: 170px;
+            }
+
+            #thirdsec {
+                margin-top: 16px;
+            }
+
+            #fourhthsec {
+                margin-top: 16px;
+            }
+
+            #endone {
+                width: 98%;
+            }
+
+            .footerlastpartis {
+                width: 99%;
+            }
+
+            .footerlastpartis>div:nth-child(1) {
+                font-size: 10px;
+            }
+
+            .footerlastpartis>div:nth-child(2) {
+                font-size: 10px;
+            }
+
+            #fourthsecmain>div {
+                justify-content: flex-end;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #socialicons {
+                width: 100%;
+            }
+
+            #thirdsec {
+                width: 60%;
+                margin: auto;
+                margin-top: 30px;
+            }
+
+            #fourhthsec {
+                margin: auto;
+                margin-top: 30px;
+            }
+        }
+
+        #mainsection {
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        #firstpart {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            padding-left: 40px;
+            padding-right: 40px;
+        }
+
+        #firstpart {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+        }
+
+        #firstpartdiv {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding: 9px 15px;
+            width: 280px;
+            cursor: pointer;
+        }
+
+        #firstpartdiv:hover {
+            border-bottom: transparent;
+        }
+
+        .newborder {
+            border: 1px solid #d4d5d9;
+        }
+
+        #firstpartdiv::before {
+            content: "Sort by : ";
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        #arrow {
+            color: #d4d5d9;
+            margin-left: 66px;
+        }
+
+        #sortonelastpart {
+            width: 278px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 4px 0px 1px;
+            position: absolute;
+            top: 155px;
+            right: 41px;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .sceondonelasrpis {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            padding: 9px 20px;
+        }
+
+        .sceondonelasrpis:hover {
+            color: #7b7f8a;
+        }
+
+        #firstsecond {
+            padding-top: 25px;
+        }
+
+        #firstlast {
+            padding-bottom: 22px;
+        }
+
+        .none {
+            display: none;
+        }
+
+        .bottomborder {
+            border-bottom: transparent;
+        }
+
+        #startmain {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+        }
+
+        #mainfirst {
+            width: 18%;
+            border: 1px solid #e9e9ed;
+        }
+
+        #mainsecond {
+            width: 82%;
+            border: 1px solid #e9e9ed;
+            margin-left: 3px;
+            padding: 10px 10px;
+        }
+
+        #firstsection {
+            width: 100%;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        #firstone {
+            display: flex;
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        #firstone>input {
+            width: 15px;
+            border: 1px solid #cccbd1;
+        }
+
+        #firstone>p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            margin-left: 12px;
+        }
+
+        #secondone {
+            display: flex;
+            padding-top: 11px;
+            padding-left: 20px;
+            padding-bottom: 18px;
+        }
+
+        #secondone>input {
+            width: 15px;
+            border: 1px solid #cccbd1;
+        }
+
+        #secondone>p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            margin-left: 12px;
+        }
+
+        #secondsection {
+            width: 100%;
+            padding-top: 22px;
+            padding-left: 18px;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        #secondsection>p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        #secondsection>div {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            padding-top: 8px;
+        }
+
+        #secondsection>div>i {
+            color: #ff3f6c;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 19px;
+        }
+
+        #secondsection>div>p {
+            margin-left: 12px;
+        }
+
+        .lastoneedit {
+            padding-bottom: 18px;
+        }
+
+        #thirdsection {
+            width: 100%;
+            padding-top: 22px;
+            padding-left: 18px;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        #thirdsection>p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        #thirdsection>div {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            padding-top: 8px;
+        }
+
+        #thirdsection>div>i {
+            color: #ff3f6c;
+        }
+
+        #thirdsection>div>p {
+            margin-left: 12px;
+        }
+
+        #fourthsection {
+            width: 100%;
+            padding-top: 22px;
+            padding-left: 18px;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        #fourthsection>p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        #fourthsection>div {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            padding-top: 8px;
+        }
+
+        #fourthsection>div>i {
+            color: #ff3f6c;
+        }
+
+        #fourthsection>div>p {
+            margin-left: 12px;
+        }
+
+        #fifthsection {
+            width: 100%;
+            padding-top: 22px;
+            padding-left: 18px;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        #fifthsection>p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        #fifthsection>div {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            padding-top: 8px;
+        }
+
+        #fifthsection>div>p {
+            margin-left: 12px;
+        }
+
+        #sixthsection {
+            width: 100%;
+            padding-top: 22px;
+            padding-left: 18px;
+            border-bottom: 1px solid #e9e9ed;
+        }
+
+        #sixthsection>p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        #sixthsection>div {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 14px;
+            padding-top: 12px;
+        }
+
+        #sixthsection>div>p {
+            margin-left: 12px;
+        }
+
+        #mainsecond {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 66px;
+        }
+
+        #mainsecond>div {
+            cursor: pointer;
+        }
+
+        #mainsecond>div:hover {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        #mainsecond>div>img {
+            width: 100%;
+        }
+
+        .mainsecondsecond {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            padding-left: 13px;
+            padding-top: 5px;
+        }
+
+        .mainsecondthird {
+            font-family: 'Nunito Sans', sans-serif;
+            font-size: 15px;
+            padding-left: 13px;
+            padding-top: 5px;
+        }
+
+        .mainsecondfourth {
+            font-family: 'Roboto', sans-serif;
+            font-size: 13px;
+            padding-left: 13px;
+            padding-top: 5px;
+            padding-bottom: 7px;
+        }
+
+        #mainsection {
+            width: 100%;
+        }
+
+        @media all and (min-width:920px) and (max-width:1200px) {
+            #mainsecond {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 66px;
+            }
+        }
+
+        @media all and (min-width:560px) and (max-width:919px) {
+            #mainsecond {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 36px;
+            }
+
+            #thirdsection>div>p {
+                font-size: 9px;
+            }
+
+            #fourthsection>div>p {
+                font-size: 9px;
+            }
+
+            #fourthsection>div>p {
+                font-size: 9px;
+            }
+
+            #secondsection>div>p {
+                font-size: 9px;
+            }
+
+            #sixthsection>div>p {
+                font-size: 9px;
+            }
+
+            #firstone>p {
+                font-size: 12px;
+            }
+
+            #secondone>p {
+                font-size: 12px;
+            }
+
+            #fourthsection {
+                padding-left: 4px;
+            }
+
+            #secondsection {
+                padding-left: 4px;
+            }
+
+            #thirdsection {
+                padding-left: 4px;
+            }
+
+            #fourthsection {
+                padding-left: 4px;
+            }
+
+            #sixthsection {
+                padding-left: 4px;
+            }
+
+            #fifthsection {
+                padding-left: 4px;
+            }
+        }
+
+
+        @media all and (min-width:360px) and (max-width:559px) {
+            #mainsecond {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 36px;
+            }
+
+            #thirdsection>div>p {
+                font-size: 9px;
+            }
+
+            #fourthsection>div>p {
+                font-size: 9px;
+            }
+
+            #fourthsection>div>p {
+                font-size: 9px;
+            }
+
+            #secondsection>div>p {
+                font-size: 9px;
+            }
+
+            #sixthsection>div>p {
+                font-size: 9px;
+            }
+
+            #firstone>p {
+                font-size: 12px;
+            }
+
+            #secondone>p {
+                font-size: 12px;
+            }
+
+            #fourthsection {
+                padding-left: 4px;
+            }
+
+            #secondsection {
+                padding-left: 4px;
+            }
+
+            #thirdsection {
+                padding-left: 4px;
+            }
+
+            #fourthsection {
+                padding-left: 4px;
+            }
+
+            #sixthsection {
+                padding-left: 4px;
+            }
+
+            #fifthsection {
+                padding-left: 4px;
+            }
+
+            #mainfirst {
+                display: none;
+            }
+
+            #startmain {
+                justify-content: center;
+            }
+
+            #mainsecond {
+                width: 100%;
+            }
+
+            #firstpart {
+                padding-left: 0px;
+            }
+
+            #firstpart {
+                padding-right: 0px;
+            }
+
+            #firstpartdiv {
+                width: 267px;
+            }
+
+            .mainsecondsecond {
+                font-size: 10px;
+            }
+
+            .mainsecondthird {
+                font-size: 9px;
+            }
+
+            .mainsecondfourth {
+                font-size: 10px;
+            }
+
+            #firstpart>p {
+                font-size: 10px;
+                padding-left: 7px;
+            }
+
+            #sortonelastpart {
+                right: -12px;
+            }
+
+            #firstpartdiv {
+                font-size: 12px;
+            }
+        }
+
+        @media all and (min-width:250px) and (max-width:359px) {
+
+            #mainsecond {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 36px;
+            }
+
+            #thirdsection>div>p {
+                font-size: 9px;
+            }
+
+            #fourthsection>div>p {
+                font-size: 9px;
+            }
+
+            #fourthsection>div>p {
+                font-size: 9px;
+            }
+
+            #secondsection>div>p {
+                font-size: 9px;
+            }
+
+            #sixthsection>div>p {
+                font-size: 9px;
+            }
+
+            #firstone>p {
+                font-size: 12px;
+            }
+
+            #secondone>p {
+                font-size: 12px;
+            }
+
+            #fourthsection {
+                padding-left: 4px;
+            }
+
+            #secondsection {
+                padding-left: 4px;
+            }
+
+            #thirdsection {
+                padding-left: 4px;
+            }
+
+            #fourthsection {
+                padding-left: 4px;
+            }
+
+            #sixthsection {
+                padding-left: 4px;
+            }
+
+            #fifthsection {
+                padding-left: 4px;
+            }
+
+            #mainfirst {
+                display: none;
+            }
+
+            #startmain {
+                justify-content: center;
+            }
+
+            #mainsecond {
+                width: 100%;
+            }
+
+            #firstpart {
+                padding-left: 0px;
+            }
+
+            #firstpart {
+                padding-right: 0px;
+            }
+
+            #firstpartdiv {
+                width: 267px;
+            }
+
+            .mainsecondsecond {
+                font-size: 10px;
+            }
+
+            .mainsecondthird {
+                font-size: 9px;
+            }
+
+            .mainsecondfourth {
+                font-size: 10px;
+            }
+
+            #firstpart>p {
+                font-size: 10px;
+                padding-left: 7px;
+            }
+
+            #sortonelastpart {
+                right: -12px;
+            }
+
+            #firstpartdiv {
+                font-size: 12px;
+            }
+        }
+
+        #thisislogout {
+            font-weight: bold;
+            color: rgb(241, 108, 108);
+            cursor: pointer;
+        }
+
+        .pointer {
+            cursor: pointer;
+        }
+
+        .pointer:hover {
+            color: gray;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="header">
+        <div id="left">
+            <div id="leftfirst">
+                <img class="pointer imageone reload" src="https://static.wixstatic.com/media/5a8799_617c7277c9d74417a778f1d49a57814d~mv2.png/v1/fill/w_200,h_200,al_c,q_85,enc_auto/Myntra.png" alt="">
+            </div>
+            <div id="leftsecond">
+                <div class="pointer men">MEN</div>
+                <div class="pointer women">WOMEN</div>
+                <div class="pointer">KIDS</div>
+                <div class="pointer">HOME & LIVING</div>
+                <div class="pointer">BEAUTY</div>
+                <div id="studio" class="pointer">STUDIO</div>
+            </div>
+        </div>
+
+        <div id="right">
+            <input type="text" id="rightfirst" placeholder="Search for products, brands and more">
+            <div class="rightsecond">
+                <div class="sectionrightsecond" id="adminpanel">
+                    <i class="fa-regular fa-user fa-xl one"></i>
+                    <i class="fa-regular fa-user fa-lg two"></i>
+                    <p class="sectionrightsecondp pointer" id="profileone">Profile</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-regular fa-heart fa-xl one"></i>
+                    <i class="fa-regular fa-heart fa-lg two"></i>
+                    <p class="sectionrightsecondp pointer">Wishlist</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-solid fa-bag-shopping fa-xl one"></i>
+                    <i class="fa-solid fa-bag-shopping fa-lg two"></i>
+                    <p class="sectionrightsecondp pointer">Bag</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="partone">
+            <div id="partonefirst">
+                <img class="imageone reload" src="https://contentmediasolution.com/wp-content/uploads/2021/05/Myntra-logo-1536x1111.png" alt="">
+            </div>
+        </div>
+
+        <div id="parttwo">
+            <div id="parttwofirst">
+                <div class="pointer men">MEN</div>
+                <div class="pointer women">WOMEN</div>
+                <div class="pointer">KIDS</div>
+                <div class="pointer">HOME & LIVING</div>
+                <div class="pointer">BEAUTY</div>
+                <div class="pointer" id="parttwostudio">STUDIO</div>
+            </div>
+
+            <input type="text" id="parttwoinput" placeholder="Search for products, brands and more">
+            <div class="rightsecond">
+                <div class="sectionrightsecond" id="pattwoadminpanel">
+                    <i class="fa-regular fa-user fa-lg two"></i>
+                    <p class="sectionrightsecondp" id="profiletwo">Profile</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-regular fa-heart fa-lg two"></i>
+                    <p class="sectionrightsecondp">Wishlist</p>
+                </div>
+                <div class="sectionrightsecond">
+                    <i class="fa-solid fa-bag-shopping fa-xl one"></i>
+                    <i class="fa-solid fa-bag-shopping fa-lg two"></i>
+                    <p class="sectionrightsecondp">Bag</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="mainsection">
+        <div id="firstpart">
+            <p id="filter">FILTERS</p>
+            <div id="firstpartdiv" class="newborder">Recommended<i id="arrow" class="fa-solid fa-angle-down fa-xl"></i>
+            </div>
+        </div>
+
+        <div id="sortonelastpart" class="none">
+            <p class="sceondonelasrpis" id="firstsecond">All Products</p>
+            <p class="sceondonelasrpis" id="firstmiddle">Price : High to Low</p>
+            <p class="sceondonelasrpis" id="firstlast">Price : Low to How</p>
+        </div>
+
+        <div id="startmain">
+            <div id="mainfirst">
+                <div id="firstsection">
+                    <div id="firstone">
+                        <input type="radio">
+                        <p>Men</p>
+                    </div>
+                    <div id="secondone">
+                        <input type="radio">
+                        <p>Women</p>
+                    </div>
+                </div>
+
+                <div id="secondsection">
+                    <p>CATEGORIES</p>
+                    <div>
+                        <i class="fa-solid fa-square-check fa-lg"></i>
+                        <p>Shirts</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-square-check fa-lg"></i>
+                        <p>Tshirts</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Jeans</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Trousers</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Jackets</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Shorts</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Sweatshirts</p>
+                    </div>
+                    <div class="lastoneedit">
+                        <input type="checkbox" class="checkbox">
+                        <p>Track Pants</p>
+                    </div>
+                </div>
+
+                <div id="thirdsection">
+                    <p>BRAND</p>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>BAESD</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-square-check fa-lg"></i>
+                        <p>Tokyo Talkies</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>SASSAFRAS</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>DressBerry</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Fabflee</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Gracit</p>
+                    </div>
+                    <div class="lastoneedit">
+                        <input type="checkbox" class="checkbox">
+                        <p>SHOWOFF</p>
+                    </div>
+                </div>
+
+                <div id="fourthsection">
+                    <p>PRICE</p>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Rs.229 to Rs.362</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Rs.361 to Rs.495</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>Rs.495 to Rs.628</p>
+                    </div>
+                    <div class="lastoneedit">
+                        <input type="checkbox" class="checkbox">
+                        <p>Rs.628 to Rs.761</p>
+                    </div>
+                </div>
+
+                <div id="fifthsection">
+                    <p>COLOR</p>
+                    <div>
+                        <i class="fa-solid fa-square fa-lg" style="color: black;"></i>
+                        <p>Black</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-square fa-lg" style="color: blue;"></i>
+                        <p>Blue</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-square fa-lg" style="color: green;"></i>
+                        <p>Green</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-square fa-lg" style="color: navy;"></i>
+                        <p>Navy Blue</p>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-square fa-lg" style="color: gray;"></i>
+                        <p>Grey</p>
+                    </div>
+                    <div class="lastoneedit">
+                        <i class="fa-solid fa-square fa-lg" style="color: pink;"></i>
+                        <p>Pink</p>
+                    </div>
+                </div>
+
+                <div id="sixthsection">
+                    <p>DISCOUNT RANGE</p>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>10% and above</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>20% and above</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>30% and above</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>40% and above</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>50% and above</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>60% and above</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>70% and above</p>
+                    </div>
+                    <div>
+                        <input type="checkbox" class="checkbox">
+                        <p>80% and above</p>
+                    </div>
+                    <div class="lastoneedit">
+                        <input type="checkbox" class="checkbox">
+                        <p>90% and above</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="mainsecond">
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12222036/2023/9/25/3ae1a3ff-b1b1-4750-acfb-51d1cbe370061695645676296-SASSAFRAS-Black-High-Neck-Cropped-Top-7801695645675915-1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Women Smocked Tie Up Top</p>
+                    <p class="mainsecondfourth">Rs.1199</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/2/5/ef1a8ba7-1794-4495-a406-c5f53d09df7b1549358412858-1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Women Solid Sweat T-shirt</p>
+                    <p class="mainsecondfourth">Rs.1255</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12221910/2023/9/27/0e1933ec-20d9-4b4e-8ec0-3d9c9680ab971695790356198-SASSAFRAS-Women-Black-Ribbed-T-shirt-391695790355778-1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Floral Print Top</p>
+                    <p class="mainsecondfourth">Rs.1399</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/13736998/2023/4/11/0621eed3-eb0f-4c2a-b275-503e837e924a1681195657769-Athena-White-Tie-Up-Neck-Puff-Sleeves-Lace-Top-8681681195657-2.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Georgette Casual T-shirt</p>
+                    <p class="mainsecondfourth">Rs.1749</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12645764/2023/9/5/5a98479f-cc97-4ffd-8c35-1b80641d143c1693895317856ChemistryWomenBlackDropShoulderT-shirt1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Embroidered Detail Top</p>
+                    <p class="mainsecondfourth">Rs.1553</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/7269188/2018/9/11/c72d893e-148d-4d25-b0a3-a47ea82336481536647563969-La-Zoire-Women-Tops-5491536647563875-1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Floral Print Back Top</p>
+                    <p class="mainsecondfourth">Rs.1599</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/13424892/2023/8/29/e55def94-526d-40be-af7c-b154681e12651693310583117AntheaaSeaGreenPinkYokeEmbroideredDobbyWeaveA-LineTop1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Self Design Up Top</p>
+                    <p class="mainsecondfourth">Rs.890</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/7287258/2018/9/21/63fdb243-6ae6-4e96-bd79-9d6e9fa7cf1c1537528406392-STREET-9-Women-Black-Sequinned-Peplum-Top-4381537528406184-1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Women Floral Printed Top</p>
+                    <p class="mainsecondfourth">Rs.1749</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2021/2/3/bc8dc9ca-33a6-434f-8d3a-c069e629a6d11612357352097-1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Floral Printed Top</p>
+                    <p class="mainsecondfourth">Rs.1344</p>
+                </div>
+
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_2.0,q_60,w_210,c_limit,fl_progressive/assets/images/13424874/2023/8/29/566397e1-70fc-4d1e-9f73-7ceb0eaac16c1693310588479AntheaaWomenRustBrownBlackEmbroideredDobbyWeaveA-LineTop1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Print Mandrian Coller T-shirt</p>
+                    <p class="mainsecondfourth">Rs.1449</p>
+                </div>
+                
+                <div class="data">
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/7256821/2018/8/31/618a2fc5-a050-4186-ba6e-815661bdf6651535699922802-na-4281535699922531-1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Solid A-Line T-shirt</p>
+                    <p class="mainsecondfourth">Rs.1080</p>
+                </div>
+                
+                <div class="data"> 
+                    <img class="mainsecondfirst" src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/12284212/2023/9/7/accf47e6-293e-45d4-b320-e68dfd7a70f41694083266805SASSAFRASBlackCropRibbedTop1.jpg" alt="">
+                    <p class="mainsecondsecond">TOKYO TALKIES</p>
+                    <p class="mainsecondthird">Navy Blue Top</p>
+                    <p class="mainsecondfourth">Rs.1199</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="profilesec" class="none">
+            <p>Welcome</p>
+            <p id="profileseconeid">To access account and manage orders</p>
+            <hr id="ruller">
+            <p class="correctstyle pointer" id="doublecorrect">Orders</p>
+            <p class="correctstyle pointer">Wishlist</p>
+            <p class="correctstyle pointer">Gift Cards</p>
+            <p class="correctstyle pointer">Contact Us</p>
+            <p class="correctstyle pointer" id="extrachar">Myntra Insider</p>
+            <hr id="rullertwo">
+
+            <p class="correctstyle pointer" id="doublecorrectparttwo">Myntra Credit</p>
+            <p class="correctstyle pointer">Coupons</p>
+            <p class="correctstyle pointer">Saved Cards</p>
+            <p class="correctstyle pointer">Saved VPA</p>
+            <p class="correctstyle pointer">Saved Address</p>
+            <p class="correctstyle pointer" id="thisislogout">Logout</p>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footermaincontent">
+            <div class="firstsec">
+                <p class="footerheading">ONLINE SHOPPING</p>
+                <p class="otherlinks gapone">Men</p>
+                <p class="otherlinks">Women</p>
+                <p class="otherlinks">Kids</p>
+                <p class="otherlinks">Home & Living</p>
+                <p class="otherlinks">Beauty</p>
+                <p class="otherlinks">Gift Cards</p>
+                <p class="otherlinks">Myntra Insider</p>
+            </div>
+            <div class="firstsec">
+                <p class="footerheading" id="changeone">CUSTOMER POLICIES</p>
+                <P class="otherlinks gapone">Contact Us</P>
+                <p class="otherlinks">FAQ</p>
+                <P class="otherlinks">T&C</P>
+                <P class="otherlinks">Terms Of Use</P>
+                <P class="otherlinks">Track Orders</P>
+                <P class="otherlinks">Shipping</P>
+                <P class="otherlinks">Cancellation</P>
+                <P class="otherlinks">Returns</P>
+                <P class="otherlinks">Privacy Policy</P>
+                <P class="otherlinks">Grievance Redressal</P>
+            </div>
+
+            <div id="thirdsec">
+                <p class="footerheading">EXPERIENCE MYNTRA APP ON MOBILE</p>
+                <div id="thirdsecimage" class="gapone">
+                    <div class="playstoreone">
+                        <img src="https://constant.myntassets.com/web/assets/img/80cc455a-92d2-4b5c-a038-7da0d92af33f1539674178924-google_play.png" alt="">
+                    </div>
+                    <div class="playstoreone">
+                        <img src="https://constant.myntassets.com/web/assets/img/bc5e11ad-0250-420a-ac71-115a57ca35d51539674178941-apple_store.png" alt="">
+                    </div>
+                </div>
+                
+                <p id="keepinntouch" style="color: black;">KEEP IN TOUCH</p>
+
+                <div id="socialicons">
+                    <img src="https://constant.myntassets.com/web/assets/img/d2bec182-bef5-4fab-ade0-034d21ec82e31574604275433-fb.png" alt="">
+                    <img src="https://constant.myntassets.com/web/assets/img/f10bc513-c5a4-490c-9a9c-eb7a3cc8252b1574604275383-twitter.png" alt="">
+                    <img src="https://constant.myntassets.com/web/assets/img/a7e3c86e-566a-44a6-a733-179389dd87111574604275355-yt.png" alt="">
+                    <img src="https://constant.myntassets.com/web/assets/img/b4fcca19-5fc1-4199-93ca-4cae3210ef7f1574604275408-insta.png" alt="">
+                </div>
+            </div>
+
+            <div id="fourhthsec">
+                <div id="fourthsecmain">
+                    <div>
+                        <img src="https://constant.myntassets.com/web/assets/img/6c3306ca-1efa-4a27-8769-3b69d16948741574602902452-original.png" alt="">
+                        <p>100% ORIGINAL guarantee for all products at myntra.com</p>
+                    </div>
+                    <div class="gapbetween">
+                        <img src="https://assets.myntassets.com/assets/images/retaillabs/2023/5/22/becb1b16-86cc-4e78-bdc7-7801c17947831684737106127-Return-Window-image.png" alt="">
+                        <p>Return within 14days of receiving your order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="endone">
+            <hr>
+        </div>
+
+        <div class="footerlastpartis">
+            <div>
+                <p>In case of any concern, <a href="#" style="color: rgb(98, 98, 223); text-decoration: none;">Contact Us</a></p>
+            </div>
+            <div>
+                <p>© 2024 www.myntra.com. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    let sortonelastpart = document.getElementById("sortonelastpart");
+    let firstpartdiv = document.getElementById("firstpartdiv");
+    firstpartdiv.addEventListener("mouseover", () => {
+        sortonelastpart.classList.remove("none");
+    })
+    firstpartdiv.addEventListener("mouseout", () => {
+        sortonelastpart.classList.add("none");
+    })
+    sortonelastpart.addEventListener("mouseover", () => {
+        sortonelastpart.classList.remove("none");
+    })
+    sortonelastpart.addEventListener("mouseout", () => {
+        sortonelastpart.classList.add("none");
+    })
+    sortonelastpart.addEventListener("mouseover", () => {
+        firstpartdiv.classList.add("bottomborder");
+    })
+    sortonelastpart.addEventListener("mouseout", () => {
+        firstpartdiv.classList.remove("bottomborder");
+    })
+
+
+    let mainsecond = document.getElementById("mainsecond");
+    let firstsecond = document.getElementById("firstsecond");
+    let firstmiddle = document.getElementById("firstmiddle");
+    let firstlast = document.getElementById("firstlast");
+
+    firstsecond.addEventListener("click", () => {
+        window.location.href = "tokyo.html"
+    })
+
+    let adminpanel = document.getElementById("adminpanel");
+    let profilesec = document.getElementById("profilesec");
+
+    adminpanel.addEventListener("mouseover", () => {
+        profilesec.classList.remove("none");
+    })
+    adminpanel.addEventListener("mouseout", () => {
+        profilesec.classList.add("none")
+    })
+    profilesec.addEventListener("mouseover", () => {
+        profilesec.classList.remove("none");
+    })
+    profilesec.addEventListener("mouseout", () => {
+        profilesec.classList.add("none")
+    })
+
+    let profileseconeid = document.getElementById("profileseconeid");
+    let profileone = document.getElementById("profileone");
+    let profiletwo = document.getElementById("profiletwo");
+    let name = JSON.parse(localStorage.getItem("name"));
+    console.log(name);
+
+    profileseconeid.innerText = name;
+    profileone.innerText = name;
+    profiletwo.innerText = name;
+
+    let thisislogout = document.getElementById("thisislogout");
+    thisislogout.addEventListener("click", () => {
+        window.location.href = "./index.html"
+    })
+ 
+    let data = document.getElementsByClassName("data");
+    console.log(data)
+    for (let i = 0; i < data.length; i++) {
+        data[i].addEventListener("click", (e) => {
+            let allData = e.target.parentElement;
+            localStorage.setItem("image", JSON.stringify(allData.children[0].src));
+            localStorage.setItem("brand", JSON.stringify(allData.children[1].innerText));
+            localStorage.setItem("type", JSON.stringify(allData.children[2].innerText));
+            localStorage.setItem("price", JSON.stringify(allData.children[3].innerText));
+            window.location.href = "./product.html"
+        })
+    }
+
+    let men = document.getElementsByClassName("men");
+    let women = document.getElementsByClassName("women");
+    let reload = document.getElementsByClassName("reload");
+
+    for (let i = 0; i < men.length; i++) {
+        men[i].addEventListener("click", () => {
+            window.location.href = "men.html"
+        })
+    }
+    for (let i = 0; i < women.length; i++) {
+        women[i].addEventListener("click", () => {
+            window.location.href = "women.html"
+        })
+    }
+
+    for (let i = 0; i < reload.length; i++) {
+        reload[i].addEventListener("click", () => {
+            console.log("hello");
+            window.location.href = "afterloginhome.html"
+        })
+    }
+</script>
